@@ -16,8 +16,17 @@ function App() {
 						</span>
 					</div>
 				</Button>
+
 				<Button type="add-item" onClick={() => console.log('added 1 item')}>
 					<span className="font-bold">+ Add New Item</span>
+				</Button>
+
+				<Button type="edit-dark" onClick={() => console.log('added 1 item')}>
+					<span className="font-bold">Edit</span>
+				</Button>
+
+				<Button type="edit-light" onClick={() => console.log('added 1 item')}>
+					<span className="font-bold">Edit</span>
 				</Button>
 			</div>
 		</main>

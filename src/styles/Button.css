@@ -4,22 +4,22 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 150px;
 	height: 48px;
 	border: none;
 	outline: none;
 	border-radius: 9999px;
+	cursor: pointer;
 }
 
 /* add invoice */
 .add-invoice-button {
+	width: 150px;
 	background-color: var(--primary-indigo-color);
 	color: var(--white-color);
 }
 
 .add-invoice-button:hover {
 	background-color: var(--secondary-indigo-color);
-	cursor: pointer;
 }
 
 .add-button-content {
@@ -54,5 +54,27 @@
 .add-item-button:hover {
 	background-color: var(--bright-indigo-color);
 	color: var(--tertiary-indigo-color);
-	cursor: pointer;
+}
+
+/* edit */
+.edit-dark-button {
+	width: 75px;
+	color: var(--bright-indigo-color);
+	background-color: var(--primary-black-color);
+}
+
+.edit-dark-button:hover {
+	background-color: var(--offwhite-color);
+	color: var(--bright-indigo-color);
+}
+
+.edit-light-button {
+	width: 75px;
+	color: var(--bright-indigo-color);
+	color: var(--tertiary-indigo-color);
+}
+
+.edit-light-button:hover {
+	background-color: var(--bright-indigo-color);
+	color: var(--tertiary-indigo-color);
 }

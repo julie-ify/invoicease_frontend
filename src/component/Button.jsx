@@ -18,8 +18,11 @@ function Button({ onClick, type, children }) {
 		case 'delete':
 			buttonClass = 'danger-button';
 			break;
-		case 'edit':
-			buttonClass = 'edit-button';
+		case 'edit-light':
+			buttonClass = 'edit-light-button';
+			break;
+		case 'edit-dark':
+			buttonClass = 'edit-dark-button';
 			break;
 		case 'save':
 			buttonClass = 'danger-button';
