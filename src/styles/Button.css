@@ -1,0 +1,58 @@
+/* default */
+
+.default-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 150px;
+	height: 48px;
+	border: none;
+	outline: none;
+	border-radius: 9999px;
+}
+
+/* add invoice */
+.add-invoice-button {
+	background-color: var(--primary-indigo-color);
+	color: var(--white-color);
+}
+
+.add-invoice-button:hover {
+	background-color: var(--secondary-indigo-color);
+	cursor: pointer;
+}
+
+.add-button-content {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.add-button-content-right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--white-color);
+	width: 30px;
+	height: 30px;
+	border-radius: 9999px;
+}
+
+.add-button-content-right span {
+	color: var(--primary-indigo-color);
+	font-size: 20px;
+}
+
+/* add item */
+.add-item-button {
+	width: 350px;
+	color: var(--tertiary-indigo-color);
+	background-color: var(--offwhite-color);
+}
+
+.add-item-button:hover {
+	background-color: var(--bright-indigo-color);
+	color: var(--tertiary-indigo-color);
+	cursor: pointer;
+}

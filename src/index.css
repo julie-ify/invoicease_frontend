@@ -1,8 +1,64 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: 'League Spartan', sans-serif;
+	font-optical-sizing: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+	--primary-black-color: #1e2139;
+	--secondary-black-color: #0c0e16;
+	--tertiary-black-color: #141625;
+	--less-black-color: #252945;
+
+	--primary-indigo-color: #7c5dfa;
+	--secondary-indigo-color: #9277ff;
+	--tertiary-indigo-color: #7e88c3;
+	--dark-indigo-color: #888eb0;
+	--bright-indigo-color: #dfe3fa;
+	--light-bg-color: #f8f8f8;
+	--white-color: #ffffff;
+	--offwhite-color: #f9fafe;
+}
+
+.font-bold {
+	font-weight: 700;
+	font-style: normal;
+}
+
+.font-heading-lg {
+	font-size: 36px;
+	line-height: 33px;
+	letter-spacing: -1px;
+}
+
+.font-heading-md {
+	font-size: 24px;
+	line-height: 22px;
+	letter-spacing: -0.75px;
+}
+
+.font-heading-sm {
+	font-size: 15px;
+	line-height: 24px;
+	letter-spacing: -0.25px;
+}
+
+.font-heading-sm-variant {
+	font-size: 15px;
+	line-height: 15px;
+	letter-spacing: -0.25px;
+}
+
+.font-body-md {
+	font-size: 13px;
+	line-height: 18px;
+	letter-spacing: -0.1px;
+}
+
+.font-heading-md-variant {
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: -0.25px;
 }
