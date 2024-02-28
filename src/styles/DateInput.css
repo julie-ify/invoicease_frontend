@@ -1,0 +1,72 @@
+.date-container {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.calender-first-item {
+	width: 100%;
+	padding: 12px 25px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	outline: 1px solid var(--bright-indigo-color);
+	border-radius: 4px;
+}
+
+.calendar-container {
+	width: 300px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 100%;
+	padding: 30px 10px;
+	border-radius: 8px;
+	box-shadow: 0.3em 0.3em 1em var(--bright-indigo-color),
+		0 0 0 var(--bright-indigo-color);
+}
+
+.calendar-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.calendar-header button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.calendar {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+	padding: 8px 2px;
+	text-align: center;
+}
+
+.calendar td {
+	cursor: pointer;
+}
+
+.calender-icon {
+	color: var(--dark-indigo-color);
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.calendar td.empty {
+  cursor: text;
+}
+
+.selected-day {
+	color: var(--primary-indigo-color);
+}

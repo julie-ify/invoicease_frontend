@@ -1,5 +1,7 @@
 import './App.css';
 import Button from './component/Button';
+import DateInput from './component/DateInput';
+import Select from './component/Select';
 
 function App() {
 	return (
@@ -11,9 +13,7 @@ function App() {
 						<div className="add-button-content-right">
 							<span>+</span>
 						</div>
-						<span className="add-button-content-left">
-							New Invoice
-						</span>
+						<span className="add-button-content-left">New Invoice</span>
 					</div>
 				</Button>
 
@@ -28,6 +28,8 @@ function App() {
 				<Button type="edit-light" onClick={() => console.log('added 1 item')}>
 					<span className="font-bold">Edit</span>
 				</Button>
+				<Select />
+				<DateInput />
 			</div>
 		</main>
 	);
