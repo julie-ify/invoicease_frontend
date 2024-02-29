@@ -11,10 +11,12 @@ function NavBar() {
 			<div className="navbar-wrapper">
 				<div className="navbar-content">
 					<div className="navbar-left">
-						<div className='logo-bg'>
-							<div className="logo-bg-up" />
+						<div className="logo-bg">
+							{/* <div className="logo-bg-up" /> */}
 							<div className="logo-bg-down" />
-							<img src={Logo} alt="Logo" />
+							<div className='logo-wrapper'>
+								<img src={Logo} alt="Logo" className="logo" />
+							</div>
 						</div>
 						<span className="mode-icon">
 							<img src={MoonIcon} alt="" />
