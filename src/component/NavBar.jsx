@@ -7,18 +7,21 @@ import '../styles/NavBar.css';
 
 function NavBar() {
 	return (
-		<section className='navbar-container'>
-			<div className='navbar-wrapper'>
-				<div className='navbar-content'>
-					<div className='navbar-left'>
-						<img src={Logo} alt="Logo" />
-						<span className='mode-icon'>
+		<section className="navbar-container">
+			<div className="navbar-wrapper">
+				<div className="navbar-content">
+					<div className="navbar-left">
+						<div className='logo-bg'>
+							<div className="logo-bg-up" />
+							<div className="logo-bg-down" />
+							<img src={Logo} alt="Logo" />
+						</div>
+						<span className="mode-icon">
 							<img src={MoonIcon} alt="" />
-							{/* <img src={Illustration} alt="" /> */}
 						</span>
 					</div>
-					<div className='navbar-right'>
-						<img src={Avatar} alt="User Avatar" className='user-avatar' />
+					<div className="navbar-right">
+						<img src={Avatar} alt="User Avatar" className="user-avatar" />
 					</div>
 				</div>
 			</div>
