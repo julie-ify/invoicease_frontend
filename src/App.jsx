@@ -1,10 +1,7 @@
 import './App.css';
 import Header from './component/Header';
 import NavBar from './component/NavBar';
-import Button from './component/Button';
-import DateInput from './component/DateInput';
-import Select from './component/Select';
-import Filter from './component/Filter';
+import InvoiceListItem from './component/InvoiceListItem';
 
 function App() {
 	return (
@@ -12,6 +9,7 @@ function App() {
 			<NavBar />
 			<section className="app-wrapper">
 				<Header />
+				<InvoiceListItem />
 			</section>
 		</main>
 	);
