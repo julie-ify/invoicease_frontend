@@ -5,21 +5,22 @@
 }
 
 .app-wrapper {
+	position: relative;
 	height: 100%;
 	max-width: 375px;
 	margin: 0 auto;
-	padding: 0 32px;
+	padding: 0 24px;
 }
 
 .overflow-hidden {
 	overflow: hidden;
 }
 
-.Container {
+.container {
 	width: 100vw;
 }
 
-.Wrapper {
+.wrapper {
 	max-width: 375px;
 	margin: 0 auto;
 	padding: 0 32px;
@@ -30,13 +31,14 @@
 	height: 0;
 	overflow: hidden;
 	transition: opacity 0.5s ease;
+	display: none;
 }
 
-.visible {
+/* .visible {
 	opacity: 1;
 	height: auto;
 	transition: opacity 0.5s ease;
-}
+} */
 
 .primary-color {
 	color: var(--primary-indigo-color);
@@ -45,6 +47,7 @@
 .primary-color:hover {
 	color: var(--secondary-indigo-color);
 }
+
 
 @media (min-width: 768px) {
 	.app-wrapper {
