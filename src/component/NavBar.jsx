@@ -12,7 +12,6 @@ function NavBar() {
 				<div className="navbar-content">
 					<div className="navbar-left">
 						<div className="logo-bg">
-							{/* <div className="logo-bg-up" /> */}
 							<div className="logo-bg-down" />
 							<div className='logo-wrapper'>
 								<img src={Logo} alt="Logo" className="logo" />

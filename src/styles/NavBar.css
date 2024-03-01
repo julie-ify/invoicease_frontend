@@ -1,6 +1,7 @@
 .navbar-container {
 	width: 100vw;
 	height: 72px;
+	margin-bottom: 30px;
 	background-color: var(--nav-bg--color);
 }
 
@@ -40,7 +41,7 @@
 
 .logo-bg {
 	width: 80px;
-	height: 72px;
+	height: 100%;
 	background-color: var(--primary-indigo-color);
 	position: relative;
 	border-top-right-radius: 20px;
@@ -60,15 +61,8 @@
 .logo-wrapper {
 	position: absolute;
 	height: 100%;
-	display: flex;
 	width: 100%;
+	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.logo {
-	top: 0;
-	bottom: 0;
-	right: 1;
-	/* margin: 0 auto; */
 }
