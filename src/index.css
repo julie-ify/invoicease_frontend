@@ -10,7 +10,7 @@ html {
 
 body {
 	margin: 0;
-	/* background-color: #fafafa; */
+	background-color: var(--offwhite-color);
 	font-family: 'League Spartan', sans-serif;
 	font-optical-sizing: auto;
 	-webkit-font-smoothing: antialiased;
@@ -87,4 +87,11 @@ ul {
 	font-size: 13px;
 	line-height: 15px;
 	letter-spacing: -0.25px;
+}
+
+.font-opacity {
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: -0.25px;
+	color: rgba(136, 142, 176, 0.8);
 }

@@ -13,7 +13,7 @@ function Select() {
 	const onChange = (e) => {
 		const value = e.target.innerHTML;
 		setIsActive(value);
-		setIsVisible(!isActive)
+		setIsVisible(!isActive);
 	};
 
 	return (
@@ -30,32 +30,34 @@ function Select() {
 					</span>
 				</div>
 				<div
-					className={isVisible ? 'visible payment-terms-second-item' : 'hidden'}
+					className={isVisible ? 'payment-terms-second-item' : 'hidden'}
 				>
-					<span
-						onClick={onChange}
-						className={isActive === 'Net 1 Day' ? 'active' : ''}
-					>
-						Net 1 Day
-					</span>
-					<span
-						onClick={onChange}
-						className={isActive === 'Net 7 Days' ? 'active' : ''}
-					>
-						Net 7 Days
-					</span>
-					<span
-						onClick={onChange}
-						className={isActive === 'Net 14 Days' ? 'active' : ''}
-					>
-						Net 14 Days
-					</span>
-					<span
-						onClick={onChange}
-						className={isActive === 'Net 30 Days' ? 'active' : ''}
-					>
-						Net 30 Days
-					</span>
+					<div className="payment-terms-select">
+						<span
+							onClick={onChange}
+							className={isActive === 'Net 1 Day' ? 'active' : ''}
+						>
+							Net 1 Day
+						</span>
+						<span
+							onClick={onChange}
+							className={isActive === 'Net 7 Days' ? 'active' : ''}
+						>
+							Net 7 Days
+						</span>
+						<span
+							onClick={onChange}
+							className={isActive === 'Net 14 Days' ? 'active' : ''}
+						>
+							Net 14 Days
+						</span>
+						<span
+							onClick={onChange}
+							className={isActive === 'Net 30 Days' ? 'active' : ''}
+						>
+							Net 30 Days
+						</span>
+					</div>
 				</div>
 			</div>
 		</section>
