@@ -1,18 +1,55 @@
 import React from 'react';
 import '../styles/InvoiceListItem.css';
+import { toCapitalizeCase } from '../utilities/formatFunction';
 
-function InvoiceListItem() {
+function InvoiceListItem({ invoice }) {
+	let statusBgStyle;
+	let statusColor;
+	let circleColor;
+
+	switch (invoice.status) {
+		case 'paid':
+			statusBgStyle = 'status-bg-green';
+			statusColor = 'font-green';
+			circleColor = 'circle-bg-green';
+			break;
+		case 'pending':
+			statusBgStyle = 'status-bg-orange';
+			statusColor = 'font-orange';
+			circleColor = 'circle-bg-orange';
+			break;
+		case 'draft':
+			statusBgStyle = 'status-bg-dark';
+			statusColor = 'font-dark';
+			circleColor = 'circle-bg-dark';
+			break;
+		default:
+			break;
+	}
 	return (
-		<div className='invoice-list-item-container'>
-			<div className='invoice-list-item-grid'>
-				<h3 className='invoice-list-item-grid-title font-heading-mdx'><span className='font-opacity'>#</span>RT3080</h3>
-				<span className='invoice-list-item-grid-username font-heading-sm font-opacity'>Jensen Huang</span>
-				<span className='invoice-list-item-grid-date font-heading-sm font-opacity'>Due 19 Aug 2021</span>
-				<div className='invoice-list-item-grid-status'>
-					<span className='circle'></span>
-					<span className='font-green font-heading-mdx font-bold'>Paid</span>
+		<div className="invoice-list-item-container">
+			<div className="invoice-list-item-upper">
+				<h3 className="invoice-list-item-grid-title font-heading-mdx">
+					<span className="font-opacity">#</span>
+					{invoice.id}
+				</h3>
+				<span className="invoice-list-item-grid-username font-heading-sm font-opacity text-right">
+					{invoice.clientName}
+				</span>
+			</div>
+			<div className="invoice-list-item-lower">
+				<span className="invoice-list-item-grid-date font-heading-sm font-opacity">
+					Due <span>{invoice.paymentDue}</span>
+				</span>
+				<div className={`invoice-list-item-grid-status ${statusBgStyle}`}>
+					<span className={`circle ${circleColor}`}></span>
+					<span className={`${statusColor} font-heading-mdx font-bold`}>
+						{toCapitalizeCase(invoice.status)}
+					</span>
 				</div>
-				<h3 className='invoice-list-item-grid-amount font-heading-mdx font-bold'>£ 1,800.90</h3>
+				<h3 className="invoice-list-item-grid-amount font-heading-mdx font-bold">
+					£ <span>{invoice.total}</span>
+				</h3>
 			</div>
 		</div>
 	);
