@@ -1,0 +1,32 @@
+.invoice-list-container {
+	margin-top: 35px;
+	height: auto;
+}
+
+.invoice-list-wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
+.empty-invoice-wrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.empty-invoice {
+	width: 206px;
+	height: 278px;
+	display: flex;
+	margin: 90px auto 0;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.empty-image {
+	width: 100%;
+}
