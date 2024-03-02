@@ -5,7 +5,7 @@ import MoonIcon from '../assets/icon-moon.svg';
 import SunIcon from '../assets/icon-sun.svg';
 import '../styles/NavBar.css';
 
-function NavBar() {
+function NavBar({ toggleMode, mode }) {
 	return (
 		<section className="navbar-container">
 			<div className="navbar-wrapper">
@@ -13,12 +13,13 @@ function NavBar() {
 					<div className="navbar-left">
 						<div className="logo-bg">
 							<div className="logo-bg-down" />
-							<div className='logo-wrapper'>
+							<div className="logo-wrapper">
 								<img src={Logo} alt="Logo" className="logo" />
 							</div>
 						</div>
-						<span className="mode-icon">
-							<img src={MoonIcon} alt="" />
+						<span className="mode-icon" onClick={toggleMode}>
+							{mode === 'light' && <img src={MoonIcon} alt="Mode" />}
+							{mode === 'dark' && <img src={SunIcon} alt="Mode" />}
 						</span>
 					</div>
 					<div className="navbar-right">

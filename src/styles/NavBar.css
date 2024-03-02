@@ -2,7 +2,7 @@
 	width: 100vw;
 	height: 72px;
 	margin-bottom: 30px;
-	background-color: var(--nav-bg-color);
+	background-color: var(--primary-black-color);
 }
 
 .navbar-wrapper {

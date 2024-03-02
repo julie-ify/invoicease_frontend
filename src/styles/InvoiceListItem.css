@@ -1,12 +1,20 @@
 .invoice-list-item-container {
 	width: 100%;
 	height: 144px;
-	background-color: var(--white-color);
 	padding: 20px;
 	border-radius: 8px;
 	display: flex;
 	flex-direction: column;
 	row-gap: 25px;
+}
+
+.invoice-list-item-container-light {
+	background-color: var(--white-color);
+}
+
+
+.invoice-list-item-container-dark {
+	background-color: var(--primary-black-color);
 }
 
 .invoice-list-item-upper {

@@ -4,12 +4,18 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import Button from './Button';
 import Filter from './Filter';
 
-function Header() {
+function Header({ mode }) {
 	return (
 		<div className="header-container">
 			<div className="header-left">
 				<h2 className="font-heading-md">Invoices</h2>
-				<span className="font-opacity">7 invoices</span>
+				<span
+					className={`${
+						mode === 'light' ? 'font-opacity-light' : 'font-opacity-dark'
+					}`}
+				>
+					7 invoices
+				</span>
 			</div>
 			<div className="header-right">
 				<div>

@@ -6,7 +6,7 @@ import InvoiceListItem from './InvoiceListItem';
 import Axios from 'axios';
 import EmptyIllustration from '../assets/illustration-empty.svg';
 
-function InvoiceList() {
+function InvoiceList({ mode }) {
 	const { appState, setAppState } = useContext(AppStateContext);
 
 	useEffect(() => {
@@ -27,7 +27,9 @@ function InvoiceList() {
 			{appState.invoices.length > 0 && (
 				<ul className="invoice-list-wrapper">
 					{appState.invoices.map((invoice) => {
-						return <InvoiceListItem invoice={invoice} key={invoice.id} />;
+						return (
+							<InvoiceListItem invoice={invoice} key={invoice.id} mode={mode} />
+						);
 					})}
 				</ul>
 			)}
@@ -40,7 +42,11 @@ function InvoiceList() {
 							alt="Empty-notice"
 						/>
 						<h2 className="font-heading-md font-bold">There is nothing here</h2>
-						<p className="font-opacity font-heading-sm-variant text-center">
+						<p
+							className={`font-heading-sm-variant text-center ${
+								mode === 'light' ? 'font-opacity-light' : 'font-opacity-dark'
+							}`}
+						>
 							Create an invoice by clicking the{' '}
 							<span className="font-bold">New</span> button and get started
 						</p>

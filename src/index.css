@@ -10,7 +10,6 @@ html {
 
 body {
 	margin: 0;
-	/* background-color: var(--offwhite-color); */
 	font-family: 'League Spartan', sans-serif;
 	font-optical-sizing: auto;
 	-webkit-font-smoothing: antialiased;
@@ -93,15 +92,24 @@ ul {
 	letter-spacing: -0.1px;
 }
 
-.font-heading-md-variant {
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: -0.25px;
-}
-
-.font-opacity {
+.font-opacity-light {
 	color: #858BB2;
 	opacity: 1;
+}
+
+.font-opacity-dark {
+	color: var(--white-color);
+	opacity: 1;
+}
+
+.font-opacity-grey-light {
+	color: #858BB2;
+	opacity: 0.8;
+}
+
+.font-opacity-grey-dark {
+	color: var(--white-color);
+	opacity: 0.8;
 }
 
 .text-right {
