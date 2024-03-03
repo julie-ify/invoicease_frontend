@@ -1,9 +1,10 @@
 import './App.css';
-import Header from './component/Header';
 import NavBar from './component/NavBar';
-import InvoiceList from './component/InvoiceList';
 import { useContext } from 'react';
 import { AppStateContext } from './hooks/appState';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import DetailsPage from './pages/DetailsPage';
 
 function App() {
 	const { appState, setAppState } = useContext(AppStateContext);
@@ -13,6 +14,8 @@ function App() {
 		setAppState((prev) => ({ ...prev, mode }));
 	};
 
+	console.log(appState)
+
 	return (
 		<main
 			className={`app-container ${
@@ -21,8 +24,12 @@ function App() {
 		>
 			<NavBar toggleMode={toggleMode} mode={appState.mode} />
 			<section className="app-wrapper">
-				<Header mode={appState.mode} />
-				<InvoiceList mode={appState.mode} />
+				<Router future={{ v7_startTransition: true }}>
+					<Routes>
+						<Route path="/" element={<Home mode={appState.mode} />} />
+						<Route path="/" element={<DetailsPage mode={appState.mode} />} />
+					</Routes>
+				</Router>
 			</section>
 		</main>
 	);

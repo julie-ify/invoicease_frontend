@@ -5,7 +5,6 @@ import {
 	toCapitalizeCase,
 	dateFormat,
 } from '../utilities/formatFunction';
-// import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import ArrowRight from '../assets/icon-arrow-right.svg';
 
 function InvoiceListItem({ invoice, mode }) {
