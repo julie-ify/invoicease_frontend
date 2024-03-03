@@ -1,12 +1,15 @@
 .invoice-list-container {
 	margin-top: 35px;
 	height: 100%;
+	width: 100%;
 }
 
 .invoice-list-wrapper {
 	display: flex;
 	flex-direction: column;
 	row-gap: 20px;
+	width: 100%;
+	/* margin: 0 auto; */
 }
 
 .empty-invoice-wrapper {
@@ -28,4 +31,11 @@
 
 .empty-image {
 	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.invoice-list-wrapper {
+		width: 672px;
+		margin: 0 auto;
+	}
 }

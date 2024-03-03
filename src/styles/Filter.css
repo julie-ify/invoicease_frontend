@@ -17,7 +17,7 @@
 .filter-select-wrapper {
 	position: absolute;
 	top: 10px;
-	left: 0;
+	left: 0px;
 	right: 0;
 	bottom: 0;
 	height: 100%;
@@ -38,12 +38,23 @@
 	width: 192px;
 	height: 138px;
 	border-radius: 8px;
-	box-shadow: 0.3em 0.3em 1em var(--bright-indigo-color),
-		0 0 0 var(--bright-indigo-color);
-	background-color: #ffffff;
 	z-index: 100;
 	padding: 20px;
 	row-gap: 10px;
+}
+
+/* light mode */
+.filter-select-light {
+	box-shadow: 0.3em 0.3em 1em var(--bright-indigo-color),
+		0 0 0 var(--bright-indigo-color);
+	background-color: #fff;
+}
+
+/* dark mode */
+.filter-select-dark {
+	box-shadow: 0.1em 0.1em 1px var(--primary-black-color),
+		0.1em 0.1em 0 var(--secondary-black-color);
+	background-color: var(--less-black-color);
 }
 
 /* Reset default checkbox styles */
@@ -65,7 +76,16 @@
 	height: 20px;
 	border: none;
 	border-radius: 2px;
+}
+
+/* light mode */
+.filter-checkbox-light {
 	background-color: var(--bright-indigo-color);
+}
+
+/* dark mode */
+.filter-checkbox-dark {
+	background-color: var(--tertiary-black-color);
 }
 
 .filter-checkbox:checked {
@@ -74,7 +94,7 @@
 }
 
 .filter-checkbox:checked:after {
-	content: "";
+	content: '';
 	display: block;
 	color: #fff;
 	position: absolute;
@@ -94,4 +114,13 @@
 .filter-checkbox:hover {
 	border: 1px solid var(--primary-indigo-color);
 	cursor: pointer;
+}
+
+@media (min-width: 768px) {
+	.filter-select-wrapper {
+		left: 70px;
+	}
+}
+
+@media (min-width: 1110px) {
 }

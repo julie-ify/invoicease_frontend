@@ -5,6 +5,8 @@ import {
 	toCapitalizeCase,
 	dateFormat,
 } from '../utilities/formatFunction';
+// import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
+import ArrowRight from '../assets/icon-arrow-right.svg';
 
 function InvoiceListItem({ invoice, mode }) {
 	let statusBgStyle;
@@ -38,28 +40,13 @@ function InvoiceListItem({ invoice, mode }) {
 					: 'invoice-list-item-container-dark'
 			}`}
 		>
-			<div className="invoice-list-item-upper">
-				<h3 className="invoice-list-item-grid-title font-heading-mdx">
-					<span
-						className={`${
-							mode === 'light' ? 'font-opacity-light' : 'font-opacity-dark'
-						}`}
-					>
-						#
-					</span>
+			<div className="invoice-list-item-grid">
+				<h3 className="invoice-list-item-grid-title font-heading-mdx grid-item">
+					<span className={`font-opacity-light`}>#</span>
 					{invoice.id}
 				</h3>
 				<span
-					className={`invoice-list-item-grid-username font-body-md text-right ${
-						mode === 'light' ? 'font-opacity-light' : 'font-opacity-dark'
-					}`}
-				>
-					{invoice.clientName}
-				</span>
-			</div>
-			<div className="invoice-list-item-lower">
-				<span
-					className={`invoice-list-item-grid-date font-body-md ${
+					className={`grid-item invoice-list-item-grid-date font-body-md ${
 						mode === 'light'
 							? 'font-opacity-grey-light'
 							: 'font-opacity-grey-dark'
@@ -67,15 +54,37 @@ function InvoiceListItem({ invoice, mode }) {
 				>
 					Due <span>{dateFormat(invoice.paymentDue)}</span>
 				</span>
-				<div className={`invoice-list-item-grid-status ${statusBgStyle}`}>
-					<span className={`circle ${circleColor}`}></span>
-					<span className={`${statusColor} font-heading-mdx font-bold`}>
+				<span
+					className={`grid-item invoice-list-item-grid-username font-body-md ${
+						mode === 'light' ? 'font-opacity-light' : 'font-opacity-dark'
+					}`}
+				>
+					{invoice.clientName}
+				</span>
+				<h3 className="grid-item invoice-list-item-grid-amount font-heading-mdx font-bold">
+					<span>{currencyConverter(invoice.total)}</span>
+				</h3>
+				<div
+					className={`grid-item invoice-list-item-grid-status ${statusBgStyle}-${
+						mode === 'light' ? 'light' : 'dark'
+					}`}
+				>
+					<span
+						className={`circle ${circleColor}-${
+							mode === 'light' ? 'light' : 'dark'
+						}`}
+					></span>
+					<span
+						className={`font-heading-mdx font-bold ${statusColor}-${
+							mode === 'light' ? 'light' : 'dark'
+						}`}
+					>
 						{toCapitalizeCase(invoice.status)}
 					</span>
 				</div>
-				<h3 className="invoice-list-item-grid-amount font-heading-mdx font-bold">
-					<span>{currencyConverter(invoice.total)}</span>
-				</h3>
+				<div className="grid-item visible-content-lg-screen">
+					<img src={ArrowRight} alt="Arrow" />
+				</div>
 			</div>
 		</div>
 	);

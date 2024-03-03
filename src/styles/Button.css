@@ -1,5 +1,7 @@
 /* default */
 .default-button {
+	font-family: 'League Spartan', sans-serif;
+	font-size: 16px;
 	height: 44px;
 	border: none;
 	outline: none;
@@ -21,8 +23,8 @@
 .add-button-content {
 	width: 100%;
 	display: flex;
-	column-gap: 10px;
 	align-items: center;
+	column-gap: 10px;
 }
 
 .add-button-content-right {
@@ -30,14 +32,9 @@
 	align-items: center;
 	justify-content: center;
 	background-color: var(--white-color);
-	width: 30px;
-	height: 30px;
+	width: 32px;
+	height: 32px;
 	border-radius: 9999px;
-}
-
-.add-button-content-right span {
-	color: var(--primary-indigo-color);
-	font-size: 20px;
 }
 
 /* add item */
@@ -73,4 +70,28 @@
 .edit-light-button:hover {
 	background-color: var(--bright-indigo-color);
 	color: var(--tertiary-indigo-color);
+}
+
+@media (min-width: 768px) {
+	.default-button {
+		height: 50px;
+	}
+
+	.add-invoice-button {
+		width: 160px;
+	}
+
+	.add-button-content {
+		column-gap: 15px;
+		padding-left: 3px;
+	}
+
+	.add-button-content-right {
+		width: 34px;
+		height: 34px;
+	}
+
+}
+
+@media (min-width: 1110px) {
 }

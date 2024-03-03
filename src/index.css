@@ -56,16 +56,16 @@ ul {
 	font-style: normal;
 }
 
-.font-heading-lg {
-	font-size: 36px;
-	line-height: 33px;
-	letter-spacing: -1px;
-}
-
 .font-heading-md {
 	font-size: 24px;
 	line-height: 22px;
 	letter-spacing: -0.75px;
+}
+
+.font-heading-mdx {
+	font-size: 18px;
+	line-height: 15px;
+	letter-spacing: -0.25px;
 }
 
 .font-heading-sm {
@@ -80,11 +80,6 @@ ul {
 	letter-spacing: -0.25px;
 }
 
-.font-heading-mdx {
-	font-size: 18px;
-	line-height: 15px;
-	letter-spacing: -0.25px;
-}
 
 .font-body-md {
 	font-size: 15px;
@@ -93,8 +88,9 @@ ul {
 	font-weight: 500;
 }
 
+
 .font-opacity-light {
-	color: #858BB2;
+	color: #858bb2;
 	opacity: 1;
 }
 
@@ -104,13 +100,11 @@ ul {
 }
 
 .font-opacity-grey-light {
-	color: #858BB2;
-	opacity: 0.8;
+	color: #858bb2;
 }
 
 .font-opacity-grey-dark {
-	color: var(--white-color);
-	opacity: 0.8;
+	color: var(--bright-indigo-color);
 }
 
 .text-right {
@@ -121,7 +115,6 @@ ul {
 	text-align: center;
 }
 
-
 @media (max-width: 345px) {
 	.font-heading-mdx {
 		font-size: 13px;
@@ -130,4 +123,23 @@ ul {
 	.font-heading-sm {
 		font-size: 13px;
 	}
+
+	.font-heading-md {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 768px) {
+	.font-heading-md {
+		font-size: 36px;
+		line-height: 33px;
+		letter-spacing: -1px;
+	}
+
+	.font-body-md {
+		font-size: 15px;
+	}
+}
+
+@media (min-width: 1110px) {
 }
