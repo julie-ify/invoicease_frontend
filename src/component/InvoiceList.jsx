@@ -13,7 +13,7 @@ function InvoiceList({ mode }) {
 		const getAllInvoices = async () => {
 			try {
 				const response = await Axios.get('/data.json');
-				setAppState({ ...appState, invoices: [] });
+				setAppState({ ...appState, invoices: response.data });
 			} catch (error) {
 				console.error(error);
 			}

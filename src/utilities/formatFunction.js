@@ -11,3 +11,15 @@ export const toCapitalizeCase = (word) => {
 
 	return word.join(' ');
 };
+
+// Converts the currency and price to human readable format e.g £2,000
+export const currencyConverter = (price) => {
+	const currencySymbol = '£';
+
+	const formattedAmount = `${currencySymbol} ${price.toLocaleString('en-UK', {
+		maximumFractionDigits: 2,
+		minimumFractionDigits: 2,
+	})}`;
+
+	return formattedAmount;
+};

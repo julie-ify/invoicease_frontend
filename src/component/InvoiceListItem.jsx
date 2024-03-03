@@ -1,6 +1,9 @@
 import React from 'react';
 import '../styles/InvoiceListItem.css';
-import { toCapitalizeCase } from '../utilities/formatFunction';
+import {
+	currencyConverter,
+	toCapitalizeCase,
+} from '../utilities/formatFunction';
 
 function InvoiceListItem({ invoice, mode }) {
 	let statusBgStyle;
@@ -54,9 +57,13 @@ function InvoiceListItem({ invoice, mode }) {
 				</span>
 			</div>
 			<div className="invoice-list-item-lower">
-				<span className={`invoice-list-item-grid-date font-body-md ${
-						mode === 'light' ? 'font-opacity-grey-light' : 'font-opacity-grey-dark'
-					}`}>
+				<span
+					className={`invoice-list-item-grid-date font-body-md ${
+						mode === 'light'
+							? 'font-opacity-grey-light'
+							: 'font-opacity-grey-dark'
+					}`}
+				>
 					Due <span>{invoice.paymentDue}</span>
 				</span>
 				<div className={`invoice-list-item-grid-status ${statusBgStyle}`}>
@@ -66,7 +73,7 @@ function InvoiceListItem({ invoice, mode }) {
 					</span>
 				</div>
 				<h3 className="invoice-list-item-grid-amount font-heading-mdx font-bold">
-					£ <span>{invoice.total}</span>
+					<span>{currencyConverter(invoice.total)}</span>
 				</h3>
 			</div>
 		</div>
