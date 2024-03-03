@@ -23,3 +23,21 @@ export const currencyConverter = (price) => {
 
 	return formattedAmount;
 };
+
+// formarts date "2021-08-19" to "19 Aug 2021"
+export const dateFormat = (date) => {
+	let dateString;
+	if (typeof date !== 'string' || !date) {
+		dateString = new Date();
+	} else {
+		dateString = new Date(date);
+	}
+
+	let formatedDate = dateString.toLocaleString('default', {
+		day: '2-digit',
+		month: 'short',
+		year: 'numeric',
+	});
+
+	return formatedDate;
+};

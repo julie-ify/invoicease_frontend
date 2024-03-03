@@ -3,6 +3,7 @@ import '../styles/InvoiceListItem.css';
 import {
 	currencyConverter,
 	toCapitalizeCase,
+	dateFormat,
 } from '../utilities/formatFunction';
 
 function InvoiceListItem({ invoice, mode }) {
@@ -64,7 +65,7 @@ function InvoiceListItem({ invoice, mode }) {
 							: 'font-opacity-grey-dark'
 					}`}
 				>
-					Due <span>{invoice.paymentDue}</span>
+					Due <span>{dateFormat(invoice.paymentDue)}</span>
 				</span>
 				<div className={`invoice-list-item-grid-status ${statusBgStyle}`}>
 					<span className={`circle ${circleColor}`}></span>
