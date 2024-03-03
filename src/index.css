@@ -87,9 +87,10 @@ ul {
 }
 
 .font-body-md {
-	font-size: 13px;
+	font-size: 15px;
 	line-height: 18px;
 	letter-spacing: -0.1px;
+	font-weight: 500;
 }
 
 .font-opacity-light {
