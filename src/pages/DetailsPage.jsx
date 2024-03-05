@@ -4,7 +4,11 @@ import EmptyIllustration from '../assets/illustration-empty.svg';
 import LeftArrow from '../assets/icon-arrow-left.svg';
 import NavBar from '../component/NavBar';
 import '../styles/DetailsPage.css';
-import { toCapitalizeCase } from '../utilities/formatFunction';
+import {
+	dateFormat,
+	toCapitalizeCase,
+	currencyConverter,
+} from '../utilities/formatFunction';
 import { useNavigate } from 'react-router-dom';
 
 function DetailsPage({ appState, toggleMode }) {
@@ -31,10 +35,10 @@ function DetailsPage({ appState, toggleMode }) {
 											alt="Go back button"
 											onClick={() => nagivate(-1)}
 										/>
-										<h4 className="font-heading-mdx">Go back</h4>
+										<h4 className="font-heading-sm">Go back</h4>
 									</div>
 								</div>
-								<section>
+								<section className="details-container">
 									<div
 										className={`status-header-container ${
 											mode === 'light'
@@ -69,6 +73,175 @@ function DetailsPage({ appState, toggleMode }) {
 												>
 													{toCapitalizeCase(invoiceToView.status)}
 												</span>
+											</div>
+										</div>
+									</div>
+									<div
+										className={`detail-wrapper ${
+											mode === 'light'
+												? 'status-header-container-light'
+												: 'status-header-container-dark'
+										}`}
+									>
+										<div className="detail-description-first-wrapper">
+											<div className="detail-description-first">
+												<h3 className="font-heading-sm">
+													<span className={`font-opacity-light`}>#</span>
+													{invoiceToView.id}
+												</h3>
+												<h4
+													className={`font-body-md ${
+														mode === 'light'
+															? 'font-opacity-grey-light'
+															: 'font-opacity-grey-dark'
+													}`}
+												>
+													{invoiceToView.description}
+												</h4>
+											</div>
+											<div
+												className={`detail-description-second font-body-md ${
+													mode === 'light'
+														? 'font-opacity-grey-light'
+														: 'font-opacity-grey-dark'
+												}`}
+											>
+												<h4 className="font-body-md">
+													{invoiceToView.senderAddress.street}
+												</h4>
+												<h4 className="font-body-md">
+													{invoiceToView.senderAddress.city}
+												</h4>
+												<h4 className="font-body-md">
+													{invoiceToView.senderAddress.postCode}
+												</h4>
+												<h4 className="font-body-md">
+													{invoiceToView.senderAddress.country}
+												</h4>
+											</div>
+										</div>
+										<div className="detail-description-info-wrapper">
+											<div className="detail-description-info-first">
+												<div className="detail-description-info-inner">
+													<h4
+														className={`font-body-md ${
+															mode === 'light'
+																? 'font-opacity-grey-light'
+																: 'font-opacity-grey-dark'
+														}`}
+													>
+														Invoice Date
+													</h4>
+
+													<h3 className="font-heading-sm">
+														{dateFormat(invoiceToView.createdAt)}
+													</h3>
+												</div>
+												<div className="detail-description-info-inner">
+													<h4
+														className={`font-body-md ${
+															mode === 'light'
+																? 'font-opacity-grey-light'
+																: 'font-opacity-grey-dark'
+														}`}
+													>
+														Payment Due
+													</h4>
+													<h3 className="font-heading-sm">
+														{dateFormat(invoiceToView.paymentDue)}
+													</h3>
+												</div>
+											</div>
+
+											<div className="detail-description-info-inner">
+												<h4
+													className={`font-body-md ${
+														mode === 'light'
+															? 'font-opacity-grey-light'
+															: 'font-opacity-grey-dark'
+													}`}
+												>
+													Bill To
+												</h4>
+												<h3 className="font-heading-sm">
+													{invoiceToView.clientName}
+												</h3>
+												<div
+													className={`detail-description-second font-body-md ${
+														mode === 'light'
+															? 'font-opacity-grey-light'
+															: 'font-opacity-grey-dark'
+													}`}
+												>
+													<h4 className="font-body-md">
+														{invoiceToView.clientAddress.street}
+													</h4>
+													<h4 className="font-body-md">
+														{invoiceToView.clientAddress.city}
+													</h4>
+													<h4 className="font-body-md">
+														{invoiceToView.clientAddress.postCode}
+													</h4>
+													<h4 className="font-body-md">
+														{invoiceToView.clientAddress.country}
+													</h4>
+												</div>
+											</div>
+
+											<div className="detail-description-info-inner">
+												<h4
+													className={`font-body-md ${
+														mode === 'light'
+															? 'font-opacity-grey-light'
+															: 'font-opacity-grey-dark'
+													}`}
+												>
+													Sent to
+												</h4>
+												<h3 className="font-heading-sm">
+													{invoiceToView.clientEmail}
+												</h3>
+											</div>
+										</div>
+
+										<div className="items-container">
+											<div
+												className={`items-wrapper ${
+													mode === 'light'
+														? 'items-wrapper-light'
+														: 'items-wrapper-dark'
+												}`}
+											>
+												{invoiceToView.items.map((item, i) => (
+													<div className="items-top" key={i}>
+														<div className="items-left">
+															<h3 className="font-heading-sm">{item.name}</h3>
+															<h3 className="font-heading-sm font-opacity-grey-light">
+																{item.quantity} x{' '}
+																{currencyConverter(item.price)}
+															</h3>
+														</div>
+														<div className="item-right">
+															<h3 className="font-heading-mdx">
+																{currencyConverter(item.quantity * item.price)}
+															</h3>
+														</div>
+													</div>
+												))}
+											</div>
+											<div
+												className={`items-bottom ${
+													mode === 'light'
+														? 'items-bottom-light'
+														: 'items-bottom-dark'
+												}`}
+											>
+												<span className="font-heading-sm font-white">
+													Grand Total
+												</span>
+												<h3 className="font-heading-md font-white">
+													{currencyConverter(invoiceToView.total)}
+												</h3>
 											</div>
 										</div>
 									</div>

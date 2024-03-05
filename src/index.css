@@ -82,7 +82,7 @@ ul {
 
 
 .font-body-md {
-	font-size: 15px;
+	font-size: 13px;
 	line-height: 18px;
 	letter-spacing: -0.1px;
 	font-weight: 500;
@@ -105,6 +105,10 @@ ul {
 
 .font-opacity-grey-dark {
 	color: var(--bright-indigo-color);
+}
+
+.font-white {
+	color: var(--white-color);
 }
 
 .text-right {
