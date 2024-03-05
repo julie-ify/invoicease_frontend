@@ -1,39 +1,34 @@
 import React from 'react';
 import '../styles/InvoiceList.css';
 import { AppStateContext } from '../hooks/appState';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import InvoiceListItem from './InvoiceListItem';
-import Axios from 'axios';
 import EmptyIllustration from '../assets/illustration-empty.svg';
+import { useNavigate } from 'react-router-dom';
 
-function InvoiceList({ mode }) {
-	const { appState, setAppState } = useContext(AppStateContext);
-
-	useEffect(() => {
-		const getAllInvoices = async () => {
-			try {
-				const response = await Axios.get('/data.json');
-				setAppState({ ...appState, invoices: response.data });
-			} catch (error) {
-				console.error(error);
-			}
-		};
-
-		getAllInvoices();
-	}, []);
+function InvoiceList() {
+	const { appState} = useContext(AppStateContext);
+	const mode = appState.mode;
+	const invoices = appState.invoices;
+	const navigate = useNavigate();
 
 	return (
 		<div className="invoice-list-container">
 			{appState.invoices.length > 0 && (
 				<ul className="invoice-list-wrapper">
-					{appState.invoices.map((invoice) => {
+					{invoices.map((invoice) => {
 						return (
-							<InvoiceListItem invoice={invoice} key={invoice.id} mode={mode} />
+							<InvoiceListItem
+								invoice={invoice}
+								key={invoice.id}
+								mode={mode}
+								handleView={() => navigate(`/invoices/${invoice.id}`)}
+							/>
 						);
 					})}
 				</ul>
 			)}
-			{appState.invoices.length === 0 && (
+			{invoices.length === 0 && (
 				<div className="empty-invoice-wrapper">
 					<div className="empty-invoice">
 						<img

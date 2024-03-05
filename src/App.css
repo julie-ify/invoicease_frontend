@@ -45,12 +45,6 @@
 	display: none;
 }
 
-/* .visible {
-	opacity: 1;
-	height: auto;
-	transition: opacity 0.5s ease;
-} */
-
 .primary-color {
 	color: var(--primary-indigo-color);
 }
