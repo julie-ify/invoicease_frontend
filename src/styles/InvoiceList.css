@@ -9,7 +9,6 @@
 	flex-direction: column;
 	row-gap: 20px;
 	width: 100%;
-	/* margin: 0 auto; */
 }
 
 .empty-invoice-wrapper {
@@ -23,10 +22,11 @@
 	width: 206px;
 	height: 278px;
 	display: flex;
-	margin: 100px auto 0;
+	margin: 70px auto 0;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	row-gap: 30px;
 }
 
 .empty-image {
@@ -37,5 +37,11 @@
 	.invoice-list-wrapper {
 		width: 672px;
 		margin: 0 auto;
+	}
+
+	.empty-invoice {
+		width: 341px;
+		height: 342px;
+		margin: 100px auto 0;
 	}
 }

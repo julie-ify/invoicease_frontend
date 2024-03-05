@@ -12,7 +12,7 @@
 
 .invoice-list-item-container-light {
 	background-color: var(--white-color);
-	box-shadow: 0px 5px 4px -6px  rgb(136, 142, 176, 0.2); /* sides offset, top/bottom offset, Blur radius, Spread radius*/
+	box-shadow: 0px 5px 4px -6px rgb(136, 142, 176, 0.2); /* sides offset, top/bottom offset, Blur radius, Spread radius*/
 }
 
 .invoice-list-item-container-dark {
@@ -62,54 +62,54 @@
 }
 
 /* light-mode */
-.status-bg-green-light {
+.status-bg-paid-light {
 	background-color: rgb(51, 214, 159, 0.06);
 }
 
-.status-bg-orange-light {
+.status-bg-pending-light {
 	background-color: rgb(247, 189, 127, 0.08);
 }
 
-.status-bg-dark-light {
+.status-bg-draft-light {
 	background-color: rgb(55, 59, 84, 0.06);
 }
 
 /* dark mode */
-.status-bg-green-dark {
+.status-bg-paid-dark {
 	background-color: rgb(51, 214, 159, 0.06);
 }
 
-.status-bg-orange-dark {
+.status-bg-pending-dark {
 	background-color: rgb(247, 189, 127, 0.08);
 }
 
-.status-bg-dark-dark {
+.status-bg-draft-dark {
 	background-color: rgb(136, 142, 176, 0.1);
 }
 
 /* light mode */
-.font-green-light {
+.font-paid-light {
 	color: #33d69f;
 }
 
-.font-orange-light {
+.font-pending-light {
 	color: #ff8f00;
 }
 
-.font-dark-light {
+.font-draft-light {
 	color: var(--nav-bg-color);
 }
 
 /* dark mode */
-.font-green-dark {
+.font-paid-dark {
 	color: #33d69f;
 }
 
-.font-orange-dark {
+.font-pending-dark {
 	color: #ff8f00;
 }
 
-.font-dark-dark {
+.font-draft-dark {
 	color: var(--bright-indigo-color);
 }
 
@@ -120,28 +120,28 @@
 }
 
 /* light mode */
-.circle-bg-green-light {
+.circle-bg-paid-light {
 	background-color: #33d69f;
 }
 
-.circle-bg-orange-light {
+.circle-bg-pending-light {
 	background-color: #ff8f00;
 }
 
-.circle-bg-dark-light {
+.circle-bg-draft-light {
 	background-color: var(--nav-bg-color);
 }
 
 /* dark mode */
-.circle-bg-green-dark {
+.circle-bg-paid-dark {
 	background-color: #33d69f;
 }
 
-.circle-bg-orange-dark {
+.circle-bg-pending-dark {
 	background-color: #ff8f00;
 }
 
-.circle-bg-dark-dark {
+.circle-bg-draft-dark {
 	background-color: var(--bright-indigo-color);
 }
 
@@ -155,7 +155,7 @@
 
 	.invoice-list-item-container-light {
 		background-color: var(--white-color);
-		box-shadow: 0px 5px 10px -5px  rgb(136, 142, 176, 0.2);
+		box-shadow: 0px 5px 10px -5px rgb(136, 142, 176, 0.2);
 	}
 
 	.invoice-list-item-grid {

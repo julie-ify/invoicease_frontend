@@ -2,12 +2,16 @@ import React from 'react';
 import '../App.css';
 import Header from '../component/Header';
 import InvoiceList from '../component/InvoiceList';
+import NavBar from '../component/NavBar';
 
-function Home({ mode }) {
+function Home({ mode, toggleMode }) {
 	return (
 		<>
-			<Header mode={mode} />
-			<InvoiceList mode={mode} />
+			<NavBar toggleMode={toggleMode} mode={mode} />
+			<section className="app-wrapper">
+				<Header mode={mode} />
+				<InvoiceList mode={mode} />
+			</section>
 		</>
 	);
 }
