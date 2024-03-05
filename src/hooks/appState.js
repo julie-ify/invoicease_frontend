@@ -4,7 +4,7 @@ export const AppStateContext = createContext();
 const AppStateProvider = ({ children }) => {
 	const [appState, setAppState] = useState({
 		invoices: [],
-		mode: 'light'
+		mode: 'light',
 	});
 
 	return (
