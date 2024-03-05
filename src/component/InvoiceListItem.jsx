@@ -7,30 +7,31 @@ import {
 } from '../utilities/formatFunction';
 import ArrowRight from '../assets/icon-arrow-right.svg';
 
-function InvoiceListItem({ invoice, mode }) {
+function InvoiceListItem({ invoice, mode, handleView }) {
 	let statusBgStyle;
 	let statusColor;
 	let circleColor;
 
 	switch (invoice.status) {
 		case 'paid':
-			statusBgStyle = 'status-bg-green';
-			statusColor = 'font-green';
-			circleColor = 'circle-bg-green';
+			statusBgStyle = 'status-bg-paid';
+			statusColor = 'font-paid';
+			circleColor = 'circle-bg-paid';
 			break;
 		case 'pending':
-			statusBgStyle = 'status-bg-orange';
-			statusColor = 'font-orange';
-			circleColor = 'circle-bg-orange';
+			statusBgStyle = 'status-bg-pending';
+			statusColor = 'font-pending';
+			circleColor = 'circle-bg-pending';
 			break;
 		case 'draft':
-			statusBgStyle = 'status-bg-dark';
-			statusColor = 'font-dark';
-			circleColor = 'circle-bg-dark';
+			statusBgStyle = 'status-bg-draft';
+			statusColor = 'font-draft';
+			circleColor = 'circle-bg-draft';
 			break;
 		default:
 			break;
 	}
+
 	return (
 		<div
 			className={`invoice-list-item-container ${
@@ -38,6 +39,7 @@ function InvoiceListItem({ invoice, mode }) {
 					? 'invoice-list-item-container-light'
 					: 'invoice-list-item-container-dark'
 			}`}
+			onClick={handleView}
 		>
 			<div className="invoice-list-item-grid">
 				<h3 className="invoice-list-item-grid-title font-heading-mdx grid-item">
