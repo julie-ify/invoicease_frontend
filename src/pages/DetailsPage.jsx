@@ -34,6 +34,7 @@ function DetailsPage({ appState, toggleMode }) {
 											src={LeftArrow}
 											alt="Go back button"
 											onClick={() => nagivate(-1)}
+											className='arrow-button'
 										/>
 										<h4 className="font-heading-sm">Go back</h4>
 									</div>
@@ -167,7 +168,7 @@ function DetailsPage({ appState, toggleMode }) {
 													{invoiceToView.clientName}
 												</h3>
 												<div
-													className={`detail-description-second font-body-md ${
+													className={`detail-description-user-info font-body-md ${
 														mode === 'light'
 															? 'font-opacity-grey-light'
 															: 'font-opacity-grey-dark'
@@ -205,15 +206,55 @@ function DetailsPage({ appState, toggleMode }) {
 										</div>
 
 										<div className="items-container">
+											{/* large screen */}
 											<div
-												className={`items-wrapper ${
+												className={`items-wrapper-large ${
+													mode === 'light'
+														? 'items-wrapper-light'
+														: 'items-wrapper-dark'
+												}`}
+											>
+												<div
+													className={`table-head ${
+														mode === 'light'
+															? 'font-opacity-grey-light'
+															: 'font-opacity-grey-dark'
+													}`}
+												>
+													<h4 className="font-body-md top-name">Item Name</h4>
+													<h4 className="font-body-md top-qty">QTY.</h4>
+													<h4 className="font-body-md top-price">Price</h4>
+													<h4 className="font-body-md top-total">Total</h4>
+												</div>
+												{invoiceToView.items.map((item, i) => (
+													<div className="items-top-large" key={i}>
+														<h3 className="font-heading-sm top-name">{item.name}</h3>
+
+														<h3 className="font-heading-sm font-opacity-grey-light top-qty">
+															{item.quantity}
+														</h3>
+
+														<h3 className="font-heading-sm font-opacity-grey-light top-price">
+															{currencyConverter(item.price)}
+														</h3>
+
+														<h3 className="font-heading-mdx top-total">
+															{currencyConverter(item.quantity * item.price)}
+														</h3>
+													</div>
+												))}
+											</div>
+
+											{/* small screen */}
+											<div
+												className={`items-wrapper-small ${
 													mode === 'light'
 														? 'items-wrapper-light'
 														: 'items-wrapper-dark'
 												}`}
 											>
 												{invoiceToView.items.map((item, i) => (
-													<div className="items-top" key={i}>
+													<div className="items-top-small" key={i}>
 														<div className="items-left">
 															<h3 className="font-heading-sm">{item.name}</h3>
 															<h3 className="font-heading-sm font-opacity-grey-light">
@@ -239,7 +280,7 @@ function DetailsPage({ appState, toggleMode }) {
 												<span className="font-heading-sm font-white">
 													Grand Total
 												</span>
-												<h3 className="font-heading-md font-white">
+												<h3 className="amount-font font-white">
 													{currencyConverter(invoiceToView.total)}
 												</h3>
 											</div>
@@ -271,7 +312,6 @@ function DetailsPage({ appState, toggleMode }) {
 								</div>
 							</div>
 						)}
-						<span></span>
 					</div>
 				)}
 			</section>

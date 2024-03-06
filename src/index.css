@@ -119,6 +119,12 @@ ul {
 	text-align: center;
 }
 
+.amount-font {
+	font-size: 24px;
+	line-height: 22px;
+	letter-spacing: -0.75px;
+}
+
 @media (max-width: 345px) {
 	.font-heading-mdx {
 		font-size: 13px;
@@ -141,7 +147,19 @@ ul {
 	}
 
 	.font-body-md {
-		font-size: 15px;
+		font-size: 16px;
+	}
+
+	.font-heading-sm {
+		font-size: 18px;
+	}
+
+	.amount-font {
+		font-size: 25px;
+	}
+
+	.font-heading-mdx {
+		font-size: 17px;
 	}
 }
 

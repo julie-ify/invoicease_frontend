@@ -84,7 +84,7 @@ function InvoiceListItem({ invoice, mode, handleView }) {
 					</span>
 				</div>
 				<div className="grid-item visible-content-lg-screen">
-					<img src={ArrowRight} alt="Arrow" />
+					<img src={ArrowRight} alt="Arrow" className='arrow-button'/>
 				</div>
 			</div>
 		</div>

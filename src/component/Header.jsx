@@ -8,7 +8,7 @@ function Header({ mode }) {
 	return (
 		<div className="header-container">
 			<div className="header-left">
-				<h2 className="font-heading-md">Invoices</h2>
+				<h1 className="font-heading-md">Invoices</h1>
 				<div
 					className={`${
 						mode === 'light' ? 'font-opacity-grey-light' : 'font-opacity-grey-dark'
