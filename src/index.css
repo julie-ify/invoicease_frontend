@@ -31,6 +31,8 @@ body {
 	--light-bg-color: #f8f8f8;
 	--white-color: #ffffff;
 	--offwhite-color: #f9fafe;
+	--primary-red-color: #ec5757;
+	--secondary-red-color: rgb(255, 151, 151);
 }
 
 h1,
@@ -80,14 +82,12 @@ ul {
 	letter-spacing: -0.25px;
 }
 
-
 .font-body-md {
 	font-size: 13px;
 	line-height: 18px;
 	letter-spacing: -0.1px;
 	font-weight: 500;
 }
-
 
 .font-opacity-light {
 	color: #858bb2;

@@ -63,13 +63,37 @@
 
 .edit-light-button {
 	width: 75px;
-	color: var(--bright-indigo-color);
 	color: var(--tertiary-indigo-color);
+}
+
+/* light mode */
+.edit-light-button-light {
+	background-color: var(--offwhite-color);
+}
+
+/* dark mode */
+.edit-light-button-dark {
+	background-color: var(--less-black-color);
+	color: var(--bright-indigo-color);
 }
 
 .edit-light-button:hover {
 	background-color: var(--bright-indigo-color);
 	color: var(--tertiary-indigo-color);
+}
+
+/* delete */
+.danger-button {
+	background-color: var(--primary-red-color);
+	width: 90px;
+	color: var(--white-color);
+}
+
+/* paid */
+.paid-button {
+	background-color: var(--primary-indigo-color);
+	width: 145px;
+	color: var(--white-color);
 }
 
 @media (min-width: 768px) {
@@ -91,6 +115,17 @@
 		height: 34px;
 	}
 
+	.danger-button {
+		width: 90px;
+	}
+
+	.edit-light-button {
+		width: 80px;
+	}
+
+	.paid-button {
+		width: 150px;
+	}
 }
 
 @media (min-width: 1110px) {

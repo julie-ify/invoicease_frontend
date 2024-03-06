@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Button.css';
 
-function Button({ onClick, type, children }) {
+function Button({ onClick, type, children, mode }) {
 	let defaultButtonClass = 'default-button';
 	let buttonClass;
 
@@ -34,7 +34,7 @@ function Button({ onClick, type, children }) {
 	return (
 		<div>
 			<button
-				className={`${defaultButtonClass} ${buttonClass}`}
+				className={`${defaultButtonClass} ${buttonClass} ${buttonClass}-${mode}`}
 				onClick={onClick}
 			>
 				{children}

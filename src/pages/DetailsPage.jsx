@@ -10,6 +10,7 @@ import {
 	currencyConverter,
 } from '../utilities/formatFunction';
 import { useNavigate } from 'react-router-dom';
+import Button from '../component/Button';
 
 function DetailsPage({ appState, toggleMode }) {
 	const location = useLocation();
@@ -34,7 +35,7 @@ function DetailsPage({ appState, toggleMode }) {
 											src={LeftArrow}
 											alt="Go back button"
 											onClick={() => nagivate(-1)}
-											className='arrow-button'
+											className="arrow-button"
 										/>
 										<h4 className="font-heading-sm">Go back</h4>
 									</div>
@@ -47,36 +48,68 @@ function DetailsPage({ appState, toggleMode }) {
 												: 'status-header-container-dark'
 										}`}
 									>
-										<span
-											className={`font-body-md ${
-												mode === 'light'
-													? 'font-opacity-grey-light'
-													: 'font-opacity-grey-dark'
-											}`}
-										>
-											Status
-										</span>
-										<div className="status-item ">
-											<div
-												className={`invoice-list-item-grid-status status-bg-${
-													invoiceToView.status
-												}-${mode === 'light' ? 'light' : 'dark'}`}
+										<div className='status-header-wrapper'>
+											<span
+												className={`font-body-md ${
+													mode === 'light'
+														? 'font-opacity-grey-light'
+														: 'font-opacity-grey-dark'
+												}`}
 											>
-												<span
-													className={`circle circle-bg-${
-														invoiceToView.status
-													}-${mode === 'light' ? 'light' : 'dark'}`}
-												></span>
-												<span
-													className={`font-heading-mdx font-bold font-${
+												Status
+											</span>
+											<div className="status-item ">
+												<div
+													className={`invoice-list-item-grid-status status-bg-${
 														invoiceToView.status
 													}-${mode === 'light' ? 'light' : 'dark'}`}
 												>
-													{toCapitalizeCase(invoiceToView.status)}
-												</span>
+													<span
+														className={`circle circle-bg-${
+															invoiceToView.status
+														}-${mode === 'light' ? 'light' : 'dark'}`}
+													></span>
+													<span
+														className={`font-heading-mdx font-bold font-${
+															invoiceToView.status
+														}-${mode === 'light' ? 'light' : 'dark'}`}
+													>
+														{toCapitalizeCase(invoiceToView.status)}
+													</span>
+												</div>
 											</div>
 										</div>
+										<section className="visible-content-lg-screen">
+											<div className={`details-footer-lg`}>
+												<Button
+													mode={mode}
+													type="edit-light"
+													onClick={() => console.log('added 1 item')}
+												>
+													<span className="font-bold font-heading-mdx">
+														Edit
+													</span>
+												</Button>
+												<Button
+													type="delete"
+													onClick={() => console.log('added 1 item')}
+												>
+													<span className="font-bold font-heading-mdx">
+														Delete
+													</span>
+												</Button>
+												<Button
+													type="paid"
+													onClick={() => console.log('added 1 item')}
+												>
+													<span className="font-bold font-heading-mdx">
+														Mark as Paid
+													</span>
+												</Button>
+											</div>
+										</section>
 									</div>
+
 									<div
 										className={`detail-wrapper ${
 											mode === 'light'
@@ -228,7 +261,9 @@ function DetailsPage({ appState, toggleMode }) {
 												</div>
 												{invoiceToView.items.map((item, i) => (
 													<div className="items-top-large" key={i}>
-														<h3 className="font-heading-sm top-name">{item.name}</h3>
+														<h3 className="font-heading-sm top-name">
+															{item.name}
+														</h3>
 
 														<h3 className="font-heading-sm font-opacity-grey-light top-qty">
 															{item.quantity}
@@ -314,6 +349,29 @@ function DetailsPage({ appState, toggleMode }) {
 						)}
 					</div>
 				)}
+			</section>
+			<section className="visible-content-sm-screen">
+				<div
+					className={`details-footer ${
+						mode === 'light'
+							? 'status-header-container-light'
+							: 'status-header-container-dark'
+					}`}
+				>
+					<Button
+						mode={mode}
+						type="edit-light"
+						onClick={() => console.log('added 1 item')}
+					>
+						<span className="font-bold font-heading-sm">Edit</span>
+					</Button>
+					<Button type="delete" onClick={() => console.log('added 1 item')}>
+						<span className="font-bold font-heading-sm">Delete</span>
+					</Button>
+					<Button type="paid" onClick={() => console.log('added 1 item')}>
+						<span className="font-bold font-heading-sm">Mark as Paid</span>
+					</Button>
+				</div>
 			</section>
 		</>
 	);
