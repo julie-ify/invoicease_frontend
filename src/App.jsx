@@ -11,18 +11,18 @@ function App() {
 	const { appState, setAppState } = useContext(AppStateContext);
 	const { mode } = appState;
 
-	useEffect(() => {
-		const getAllInvoices = async () => {
-			try {
-				const response = await Axios.get('/data.json');
-				setAppState({ ...appState, invoices: response.data });
-			} catch (error) {
-				console.error(error);
-			}
-		};
+	const getAllInvoices = async (setAppState) => {
+		try {
+			const response = await Axios.get('/data.json');
+			setAppState((prev) => ({ ...prev, invoices: response.data }));
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
-		getAllInvoices();
-	}, []);
+	useEffect(() => {
+		getAllInvoices(setAppState);
+	}, [setAppState]);
 
 	const toggleMode = () => {
 		let newMode = mode === 'light' ? 'dark' : 'light';
@@ -45,7 +45,11 @@ function App() {
 						<Route
 							path={`/invoices/:invoice`}
 							element={
-								<DetailsPage appState={appState} setAppState={setAppState} toggleMode={toggleMode}/>
+								<DetailsPage
+									appState={appState}
+									setAppState={setAppState}
+									toggleMode={toggleMode}
+								/>
 							}
 						/>
 						<Route path="*" element={<Error />} />
